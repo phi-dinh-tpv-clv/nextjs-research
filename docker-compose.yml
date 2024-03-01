@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  task_management:
+    container_name: task-management
+    image: nextapp_test
+    build: .
+    ports:
+      - "3000:3000"
