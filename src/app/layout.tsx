@@ -5,6 +5,7 @@ import { TanstackProvider } from "@/config/query-config/TanstackProvider";
 import { NextAuthProvider } from "@/config/next-auth/NextAuthProviders";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,13 +17,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className} suppressHydrationWarning={true}>
-        <ToastContainer />
-        {children}
-        {/* <TanstackProvider>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <body className={inter.className} suppressHydrationWarning={true}>
+          <ToastContainer />
+          {children}
+          {/* <TanstackProvider>
           <NextAuthProvider>{children}</NextAuthProvider>
         </TanstackProvider> */}
-      </body>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
