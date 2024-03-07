@@ -1,14 +1,13 @@
 import React from "react";
 import { Box, Heading } from "@chakra-ui/react";
-import CommonTable from "@/components/tanstack-table/CommonTable";
+import TanstackTable from "@/components/tanstack-table/TaskTable";
 
-type Props = {};
-
-const TanstackTableDemo = (props: Props) => {
+const TanstackTableDemo: React.FC = () => {
   return (
-    <Box maxW={1000} mx="auto" px={6} pt={24} fontSize="sm">
+    <Box mx="auto" px={6} pt={24} fontSize="sm" className="container">
       <Heading mb={10}>TanStack Table</Heading>
-      <CommonTable />
+
+      <TanstackTable />
     </Box>
   );
 };

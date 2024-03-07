@@ -33,7 +33,6 @@ export function PeopleDataTable<TData, TValue>({ columns, data }: DataTableProps
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
-  console.log("rowSelection", rowSelection);
 
   const table = useReactTable({
     data,
@@ -76,11 +75,7 @@ export function PeopleDataTable<TData, TValue>({ columns, data }: DataTableProps
 
         <ThemeToggle className="ml-4" />
         <DropdownMenu>
-          <DropdownMenuTrigger className="ml-5">
-            <Button variant={"outline"} className="ml-auto">
-              Columns
-            </Button>
-          </DropdownMenuTrigger>
+          <DropdownMenuTrigger className="border-accent-100 ml-5 h-10 border px-4 py-2">Columns</DropdownMenuTrigger>
 
           <DropdownMenuContent align="end">
             {table
@@ -107,7 +102,6 @@ export function PeopleDataTable<TData, TValue>({ columns, data }: DataTableProps
       <div className="rounded-md border">
         <Table>
           <TableHeader>
-            {/* <TableHead> */}
             {table.getHeaderGroups().map((headerGroup) => {
               return (
                 <TableRow key={headerGroup.id}>
@@ -121,7 +115,6 @@ export function PeopleDataTable<TData, TValue>({ columns, data }: DataTableProps
                 </TableRow>
               );
             })}
-            {/* </TableHead> */}
           </TableHeader>
           <TableBody>
             {table.getRowModel()?.rows?.length ? (

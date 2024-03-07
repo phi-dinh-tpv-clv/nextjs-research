@@ -5,11 +5,7 @@ import PeopleDataTable from "./data-table";
 import { columns } from "./column";
 import { people } from "@/utils/tanstack-table/people";
 
-type Props = {
-  //
-};
-
-const People = (props: Props) => {
+const People: React.FC = () => {
   return (
     <div className="container mx-auto py-10">
       <PeopleDataTable columns={columns} data={people} />
